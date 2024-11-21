@@ -5,86 +5,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Injecting External Metadata into Foundational Time-Series Models for Epidemiological Forecasting</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f9fafb;
+            --text-color: #333;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
+
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
+
         header {
             text-align: center;
-            padding: 40px 0;
-            background-color: #f4f4f4;
+            padding: 60px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.4;
+        }
+
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 200px;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .resources {
+            background: white;
+            padding: 30px;
             border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+
+        .resources h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
-        nav {
-            margin: 20px 0;
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-        nav a {
-            margin: 0 10px;
-            color: #0366d6;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            background: white;
+
+        .resource-item {
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #f8f9fa;
+            border-radius: 6px;
+            text-align: center;
         }
+
+        .resource-item a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .resource-item a:hover {
+            background-color: #2980b9;
+        }
+
+        .summary {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+
+        .summary h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
         footer {
             text-align: center;
-            margin-top: 40px;
+            padding: 20px;
             color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Injecting External Metadata into Foundational Time-Series Models for Epidemiological Forecasting</h1>
+        <p>CSE 8803 Course Project</p>
+    </header>
+
     <div class="container">
-        <header>
-            <h1>Welcome to My Website</h1>
-            <p>Built with GitHub Pages</p>
-        </header>
+        <div class="team-section">
+            <div class="team-member">
+                <img src="/api/placeholder/150/150" alt="Team Member 1">
+                <h3>Team Member 1</h3>
+                <p>Role/Department</p>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/150/150" alt="Team Member 2">
+                <h3>Team Member 2</h3>
+                <p>Role/Department</p>
+            </div>
+        </div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="summary">
+            <h2>Project Summary</h2>
+            <p>This project investigates the integration of external metadata into foundational time-series models to enhance epidemiological forecasting accuracy. Our research focuses on...</p>
+            
+            <h3>Key Results</h3>
+            <ul>
+                <li>Result 1: Description of significant finding</li>
+                <li>Result 2: Description of significant finding</li>
+                <li>Result 3: Description of significant finding</li>
+            </ul>
+        </div>
 
-        <div class="content">
-            <section id="about">
-                <h2>About Me</h2>
-                <p>Hello! I'm a developer/designer/creator. This is my personal website where I share my work and thoughts.</p>
-            </section>
-
-            <section id="projects">
-                <h2>My Projects</h2>
-                <p>Here are some of my recent projects:</p>
-                <ul>
-                    <li>Project 1</li>
-                    <li>Project 2</li>
-                    <li>Project 3</li>
-                </ul>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>You can reach me at: your.email@example.com</p>
-            </section>
+        <div class="resources">
+            <h2>Project Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <h3>Project Write-up</h3>
+                    <p>Detailed documentation of our methodology and findings</p>
+                    <a href="path-to-your-pdf.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Source Code</h3>
+                    <p>Implementation and analysis scripts</p>
+                    <a href="path-to-your-tarball.tar.gz" target="_blank">Download Code</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Presentation Slides</h3>
+                    <p>Project presentation and visual materials</p>
+                    <a href="path-to-your-slides.pdf" target="_blank">View Slides</a>
+                </div>
+            </div>
         </div>
 
         <footer>
-            <p>© 2024 Your Name. Built with GitHub Pages.</p>
+            <p>© 2024 - Georgia Institute of Technology</p>
         </footer>
     </div>
 </body>
