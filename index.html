@@ -164,10 +164,60 @@
 
         <div class="summary">
             <h2>Project Summary</h2>
-            <p>Time series forecasting is crucial for epidemiological decision-making, particularly in the early stages of disease outbreaks when quick and accurate predictions can significantly impact public health outcomes. While foundational time-series models (FMs) offer flexibility and generalizability, they often lack domain-specific knowledge that could enhance their predictive accuracy for epidemiological applications. This paper presents a novel approach to improving FM performance by integrating external metadata, specifically exploring how text-based epidemiological data can guide and enhance the forecasting capabilities of Amazon's Chronos model for influenza-like illness (ILI) prediction. We develop a pipeline that combines time series encodings from Chronos with text encodings from SentenceTransformers using cross-attention fusion, incorporating metadata such as Google search trends and temperature data. Our experimental results demonstrate that this metadata-integrated approach outperforms both traditional ARIMA models and fine-tuned Chronos baselines, achieving a 19.1\% improvement in mean squared error compared to ARIMA and a 56.4\% improvement over the fine-tuned Chronos model without metadata. These results suggest that integrating relevant epidemiological metadata into foundational time series models can significantly improve their forecasting accuracy while maintaining their inherent flexibility and rapid deployability.</p>
+            <p>Time series forecasting is crucial for epidemiological decision-making, particularly in the early stages of disease outbreaks when quick and accurate predictions can significantly impact public health outcomes. While foundational time-series models (FMs) offer flexibility and generalizability, they often lack domain-specific knowledge that could enhance their predictive accuracy for epidemiological applications. This paper presents a novel approach to improving FM performance by integrating external metadata, specifically exploring how text-based epidemiological data can guide and enhance the forecasting capabilities of Amazon's Chronos model for influenza-like illness (ILI) prediction. We develop a pipeline that combines time series encodings from Chronos with text encodings from SentenceTransformers using cross-attention fusion, incorporating metadata such as Google search trends and temperature data. Our experimental results demonstrate that this metadata-integrated approach outperforms both traditional ARIMA models and fine-tuned Chronos baselines, achieving a 19.1% improvement in mean squared error compared to ARIMA and a 56.4% improvement over the fine-tuned Chronos model without metadata. These results suggest that integrating relevant epidemiological metadata into foundational time series models can significantly improve their forecasting accuracy while maintaining their inherent flexibility and rapid deployability.</p>
             
             <h3>Key Results</h3>
             <p>Our results show that text-encoded metadata integrated into a time-series FM can increase it's forecasting accuracy.</p>
+            <figure style="text-align: center; margin: 20px auto;">
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                  <div style="width: 24%;">
+                    <img src="Chronos_NoText_1.png" style="width: 100%;" alt="Chronos without text model 1">
+                    <figcaption style="margin-top: 5px;">(a)</figcaption>
+                  </div>
+                  <div style="width: 24%;">
+                    <img src="Chronos_NoText_2.png" style="width: 100%;" alt="Chronos without text model 2">
+                    <figcaption style="margin-top: 5px;">(b)</figcaption>
+                  </div>
+                  <div style="width: 24%;">
+                    <img src="Chronos_wText_1.png" style="width: 100%;" alt="Chronos with text model 1">
+                    <figcaption style="margin-top: 5px;">(c)</figcaption>
+                  </div>
+                  <div style="width: 24%;">
+                    <img src="Chronos_wText_2.png" style="width: 100%;" alt="Chronos with text model 2">
+                    <figcaption style="margin-top: 5px;">(d)</figcaption>
+                  </div>
+                </div>
+                <figcaption style="margin-top: 15px;">
+                  Base Fine Tuned Model vs Metadata (String) Guided Model
+                </figcaption>
+               </figure>
+            <table style="border-collapse: collapse; margin: 20px auto;">
+                <thead>
+                  <tr>
+                    <th style="padding: 8px; border-bottom: 2px solid black; text-align: left;">Model</th>
+                    <th style="padding: 8px; border-bottom: 2px solid black; text-align: center;">MSE</th>
+                    <th style="padding: 8px; border-bottom: 2px solid black; text-align: right;">% Difference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd; text-align: left;">Text Metadata Integrated Chronos</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd; text-align: center;"><strong>3.46</strong></td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd; text-align: right;"><strong>--</strong></td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd; text-align: left;">ARIMA</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd; text-align: center;">4.12</td>
+                    <td style="padding: 8px; border-bottom: 1px solid #ddd; text-align: right;">+19.1%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px; border-bottom: 2px solid black; text-align: left;">Fine Tuned Chronos (no text metadata)</td>
+                    <td style="padding: 8px; border-bottom: 2px solid black; text-align: center;">5.41</td>
+                    <td style="padding: 8px; border-bottom: 2px solid black; text-align: right;">+56.4%</td>
+                  </tr>
+                </tbody>
+                <caption style="caption-side: bottom; text-align: center; margin-top: 10px;">Model MSE Scores on Test Set</caption>
+              </table>
             <ul>
                 <li> More specifically, our metadata-infused FM outperforms </li>
                 <li>Result 2: Description of significant finding</li>
